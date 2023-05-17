@@ -4,10 +4,41 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <title>React Custom Elements App</title>
+    <script src="dist/assets/index.js"></script>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body style="background-color: #f5f5f5;">
+    <div style="max-width: 360px; margin: 0 auto;">
+
+      <react-app value="default"></react-app>
+
+      <section style="padding: 0 32px;">
+        <h2>Custom Element外</h2>
+        <div>
+          <input type="text" id="input" value="default" />
+        </div>
+        <p>
+          カウントの値: <strong id="count">0</strong>
+        </p>
+
+      </section>
+
+    </div>
+
+    <script>
+      const inputElement = document.querySelector('input[type="text"]');
+      const reactApp = document.querySelector('react-app');
+      inputElement.addEventListener('input', (event) => {
+        const value = event.target.value;
+        reactApp.setAttribute('value', value);
+      });
+      reactApp.addEventListener('count-changed', (event) => {
+        // カスタムイベントからデータを取得
+        const count = event.detail;
+        const countElement = document.getElementById('count');
+        countElement.textContent = count;
+      });
+    </script>
+
   </body>
 </html>
