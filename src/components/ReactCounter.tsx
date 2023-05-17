@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom";
 import { createRoot, Root } from 'react-dom/client';
 
-import './index.css';
-import App from './App';
+import './ReactCounter.css';
+import CountUp from './CountUp';
 
 /**
  * Reactを使ったサンプルのCustom Elements
@@ -31,7 +31,7 @@ export class ReactCounter extends HTMLElement {
     const value = this.getAttribute('value') || '';
     this.root = createRoot(this.shadowRoot);
     this.root.render(
-      <App value={value} onCountChanged={this.handleCountChanged} />
+      <CountUp value={value} onCountChanged={this.handleCountChanged} />
     );
   }
 
@@ -54,7 +54,7 @@ export class ReactCounter extends HTMLElement {
     if (name === 'value' && oldValue !== newValue) {
       // 更新された Web Components の属性値をReactコンポーネントに反映
       this.root.render(
-        <App value={newValue} onCountChanged={this.handleCountChanged} />
+        <CountUp value={newValue} onCountChanged={this.handleCountChanged} />
       );
     }
   }

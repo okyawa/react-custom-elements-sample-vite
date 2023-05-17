@@ -1,4 +1,4 @@
-import { ReactCounter } from "..";
+import { ReactCounter } from "../components/ReactCounter";
 
 /**
  * Custom Elementsの登録

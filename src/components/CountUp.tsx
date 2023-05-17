@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import './App.css';
+import './CountUp.css';
 
 type Props = {
   value: string;
   onCountChanged: (count: number) => void;
 };
 
-function App({ value, onCountChanged }: Props) {
+function CountUp({ value, onCountChanged }: Props) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -37,4 +37,4 @@ function App({ value, onCountChanged }: Props) {
   )
 }
 
-export default App;
+export default CountUp;
