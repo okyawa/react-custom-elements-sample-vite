@@ -4,6 +4,7 @@ import glob from 'fast-glob';
 
 const entries = glob.sync('src/entries/*.ts');
 
+// `src/entries/` 内のファイルをエントリーポイントとして登録する
 const input = entries.reduce((acc, entry) => {
   const key = entry.replace('src/entries/', '').replace('.ts', '');
   acc[key] = entry;
