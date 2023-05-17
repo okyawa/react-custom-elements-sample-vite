@@ -14,6 +14,7 @@ const input = entries.reduce((acc, entry) => {
 export default defineConfig({
   plugins: [react()],
   build: {
+    outDir: 'dist',
     rollupOptions: {
       input,
       output: {
