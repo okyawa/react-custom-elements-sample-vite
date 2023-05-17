@@ -7,10 +7,11 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        index: 'src/index.tsx',
+        sample: 'src/entries/sample.tsx',
       },
       output: {
         entryFileNames: 'assets/[name].js',
+        assetFileNames: 'assets/[name][extname]'
       }
     }
   }

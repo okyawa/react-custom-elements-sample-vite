@@ -7,7 +7,7 @@ import App from './App';
 /**
  * Reactを使ったサンプルのCustom Elements
  */
-class ReactCounter extends HTMLElement {
+export class ReactCounter extends HTMLElement {
   private root: Root | null;
 
   constructor() {
@@ -92,9 +92,3 @@ class ReactCounter extends HTMLElement {
     this.dispatchEvent(event);
   };
 }
-
-/**
- * Custom Elementsの登録
- */
-customElements.define("react-app", ReactCounter);
-
